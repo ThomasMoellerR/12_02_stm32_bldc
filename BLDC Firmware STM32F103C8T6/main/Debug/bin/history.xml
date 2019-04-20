@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=main.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\main -TC:\CooCox\CoIDE\configuration\ProgramData\main/arm-gcc-link.ld -g">
+      <target file="main.elf" lastModified="16a3b7b2bac">
+         <source file="..\obj\stm32f10x_tim.o" lastModified="16a3b6c6dfa"/>
+         <source file="..\obj\hwe.o" lastModified="16a3b6c6e39"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="16a3b6c6e71"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="16a3b6c6e9b"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="16a3b6c6eda"/>
+         <source file="..\obj\ctl.o" lastModified="16a3b7b29c9"/>
+         <source file="..\obj\main.o" lastModified="16a3b6c6f4a"/>
+         <source file="..\obj\ext.o" lastModified="16a3b6c6f89"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="16a3b6c6fce"/>
+         <source file="..\obj\stm32f10x_exti.o" lastModified="16a3b6c7005"/>
+         <source file="..\obj\stm32f10x_adc.o" lastModified="16a3b6c704e"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="16a3b6c7094"/>
+         <source file="..\obj\tim1.o" lastModified="16a3b6c70d4"/>
+         <source file="..\obj\tim2.o" lastModified="16a3b6c711a"/>
+         <source file="..\obj\tim3.o" lastModified="16a3b6c715f"/>
+         <source file="..\obj\syscalls.o" lastModified="16a3b6c7195"/>
+         <source file="..\obj\stm32f10x_dma.o" lastModified="16a3b6c71d1"/>
+         <source file="..\obj\bldc.o" lastModified="16a3b6c72b7"/>
+         <source file="..\obj\usart3.o" lastModified="16a3b6c72fb"/>
+         <source file="..\obj\misc.o" lastModified="16a3b6c7332"/>
+         <source file="..\obj\tsc.o" lastModified="16a3b6c7375"/>
+         <source file="..\obj\ser3.o" lastModified="16a3b6c73bd"/>
+         <source file="..\obj\stm32f10x_iwdg.o" lastModified="16a3b6c73f2"/>
+      </target>
+   </processor>
+</history>
