@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\com.o
+./release\ser.o
+./release\ctl.o
+./release\config.o
+./release\json.o
+./release\moc_mainwindow.o
+./release\moc_com.o
+./release\moc_ser.o
+./release\moc_ctl.o
+./release\moc_config.o
+);

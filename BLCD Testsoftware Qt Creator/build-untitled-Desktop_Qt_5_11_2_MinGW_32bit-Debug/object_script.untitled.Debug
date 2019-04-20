@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\com.o
+./debug\ser.o
+./debug\ctl.o
+./debug\config.o
+./debug\json.o
+./debug\moc_mainwindow.o
+./debug\moc_com.o
+./debug\moc_ser.o
+./debug\moc_ctl.o
+./debug\moc_config.o
+);
