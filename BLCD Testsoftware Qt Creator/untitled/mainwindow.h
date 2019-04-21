@@ -40,6 +40,12 @@ private slots:
     void on_checkBox_Send_Cyclic_stateChanged(int arg1);
     void on_checkBox_Enable_RPS_Info_stateChanged(int arg1);
     void on_checkBox_Enable_Hall_Detection_stateChanged(int arg1);
+    void on_checkBox_1H_stateChanged(int arg1);
+    void on_checkBox_1L_stateChanged(int arg1);
+    void on_checkBox_2H_stateChanged(int arg1);
+    void on_checkBox_2L_stateChanged(int arg1);
+    void on_checkBox_3H_stateChanged(int arg1);
+    void on_checkBox_3L_stateChanged(int arg1);
 };
 
 #endif // MAINWINDOW_H

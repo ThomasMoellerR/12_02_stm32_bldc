@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>663</width>
-    <height>553</height>
+    <height>693</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -96,6 +96,11 @@
     <item>
      <property name="text">
       <string>Manuelle Kommutierung</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Test Mosfets</string>
      </property>
     </item>
    </widget>
@@ -433,6 +438,110 @@
     </property>
     <property name="text">
      <string>Hall Detection Information</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>500</y>
+      <width>601</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>520</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mosfet Test</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_1H">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>550</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1H</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_1L">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>580</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_2H">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>550</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2H</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_2L">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>580</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_3H">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>550</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3H</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_3L">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>580</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3L</string>
     </property>
    </widget>
   </widget>

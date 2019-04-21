@@ -18,11 +18,7 @@
  Global Constants
  ******************************************************************************/
 
-#define BLDC_DEBUG_MOSFETS_PWM 1000 // Für einzelne Mosfet Tests
-#define BLDC_MAX_PWM 3800 // 3800 = 95%
-// Defines für Manuelle Kommuation
-#define BLDC_MANUAL_COMMUTATION_DELAY	2000
-
+#define BLDC_MAX_PWM 3800 // 3800 = 95%, Ladungspumpe nicht auf 100% setzen
 
 // Mosfet Testing
 //#define BLDC_DEBUG_ALL_HIGH_SIDE_MOSFETS_ENABLE
@@ -40,12 +36,20 @@
 //#define BLDC_DEBUG_EXT_INT_PHASE_C
 //#define BLDC_DEBUG_EXT_INT_PHASE_ABC
 
+#define BLDC_TEST_MOSFETS_1H     1
+#define BLDC_TEST_MOSFETS_1L     2
+#define BLDC_TEST_MOSFETS_2H     3
+#define BLDC_TEST_MOSFETS_2L     4
+#define BLDC_TEST_MOSFETS_3H     5
+#define BLDC_TEST_MOSFETS_3L     6
+
 
 #define BLDC_PWM_HIGH_SIDE_MOSFETS
 
-#define BLDC_MODE_HALL 0
-#define BLDC_MODE_SENSORLESS 1
-#define BLDC_MODE_MANUAL_KOMMUTATION 2
+#define BLDC_MODE_HALL 						0
+#define BLDC_MODE_SENSORLESS 				1
+#define BLDC_MODE_MANUAL_KOMMUTATION 		2
+#define BLDC_MODE_MOSFET_TEST 				3
 
 /******************************************************************************
  Global Type-Definitions
@@ -81,7 +85,7 @@ TUINT8* BLDC_pu8Automatic_Hall_Detection(void);
 void BLDC_pu8Automatic_Hall_Detection_Hex(TUINT8* pHall_Detection);
 void BLDC_Set_Hall(TUINT8* pHall);
 void BLDC_Set_Mode(TUINT8 u8MotorTyp);
-TUINT8 BLDC_Get_Motortyp(void);
+void BLDC_Test_Mosfets(TUINT8 *pu8Mosfets);
 
 
 TUINT16 BLDC_u16GetPeriode(void);

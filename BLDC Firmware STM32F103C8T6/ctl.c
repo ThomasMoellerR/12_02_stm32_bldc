@@ -45,6 +45,13 @@
 #define SET_RPS_INFO				0x26
 #define GET_RPS_INFO				0x27
 
+#define TEST_MOSFETS_1H     1
+#define TEST_MOSFETS_1L     2
+#define TEST_MOSFETS_2H     3
+#define TEST_MOSFETS_2L     4
+#define TEST_MOSFETS_3H     5
+#define TEST_MOSFETS_3L     6
+
 /******************************************************************************
    Local Type-Definitions
 ******************************************************************************/   
@@ -134,7 +141,8 @@ void CTL_Main (void)
 
 				switch(SER3_au8RecBuf[CMD])
 				{
-					case CMD_TEST_MOSFETS:
+					case CMD_TEST_MOSFETS:		BLDC_Set_Mode(BLDC_MODE_MOSFET_TEST);
+												ctl_State = MOSFET_TEST;
 												break;
 
 					case CMD_HALL :				BLDC_Set_Mode(BLDC_MODE_HALL);
@@ -223,6 +231,17 @@ void CTL_Main (void)
 		      // Delay
 		      memcpy((char*)unAnyData.au8Data, (char*)&SER3_au8RecBuf[DELAY], 2);
 		      ctl_u16Man_Kom_Time = unAnyData.u16Data;
+		  }
+
+		break;
+
+
+	  case MOSFET_TEST: // Wenn ich im Zustand Timeout bin und es kommt ein neuer Befehlt, dann neuen Modus einnehmen.
+
+		  if (SER3_au8RecBuf[CMD] == SET_MOSFETS)
+		  {
+
+			  BLDC_Test_Mosfets(SER3_au8RecBuf);
 		  }
 
 		break;

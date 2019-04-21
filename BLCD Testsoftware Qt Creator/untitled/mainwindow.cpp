@@ -33,24 +33,6 @@ float BLDC_afPhysical_Period_Factors[6];
 
 uint8_t noticeLastCmd;
 
-// Commands
-#define CMD_SET_MODE_STEUERUNG 0
-#define CMD_SET_MODE_MAN_KOMM 1
-
-#define CMD_SET_MOTORTYP 10
-#define CMD_SET_HALL_INFORMATION 11
-
-// Motortyp
-#define MOTORTYP_IS_HALL 0
-#define MOTORTYP_IS_SENSORLESS 1
-
-
-// Mikrocontroller sendet zum PC
-#define HALL_VALUES 1
-#define MOTOR_UMIN 0
-
-
-
 
 //////////////// Neue Defines
 
@@ -79,6 +61,13 @@ uint8_t noticeLastCmd;
 #define SET_DIR_PWM					0x25
 #define SET_RPS_INFO				0x26
 #define GET_RPS_INFO				0x27
+
+#define TEST_MOSFETS_1H     1
+#define TEST_MOSFETS_1L     2
+#define TEST_MOSFETS_2H     3
+#define TEST_MOSFETS_2L     4
+#define TEST_MOSFETS_3H     5
+#define TEST_MOSFETS_3L     6
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -304,6 +293,12 @@ void MainWindow::on_pushButton_Set_Mode_clicked()
         ser->Snd_Input(senddata);
     }
 
+    if(ui->comboBox->currentText() == "Test Mosfets")
+    {
+        senddata[CMD] = CMD_TEST_MOSFETS;
+        noticeLastCmd = senddata[CMD];
+        ser->Snd_Input(senddata);
+    }
 }
 
 
@@ -335,5 +330,85 @@ void MainWindow::on_checkBox_Enable_Hall_Detection_stateChanged(int arg1)
     QByteArray senddata;
     senddata[CMD] = SET_HALL_DETECTION;
     senddata[DATA] = arg1 ? 1: 0;
+    ser->Snd_Input(senddata);
+}
+
+
+
+void MainWindow::on_checkBox_1H_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
+    ser->Snd_Input(senddata);
+}
+
+void MainWindow::on_checkBox_1L_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
+    ser->Snd_Input(senddata);
+}
+
+void MainWindow::on_checkBox_2H_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
+    ser->Snd_Input(senddata);
+}
+
+void MainWindow::on_checkBox_2L_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
+    ser->Snd_Input(senddata);
+}
+
+void MainWindow::on_checkBox_3H_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
+    ser->Snd_Input(senddata);
+}
+
+void MainWindow::on_checkBox_3L_stateChanged(int arg1)
+{
+    QByteArray senddata;
+    senddata[CMD] = SET_MOSFETS;
+    senddata[TEST_MOSFETS_1H] = ui->checkBox_1H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_1L] = ui->checkBox_1L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2H] = ui->checkBox_2H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_2L] = ui->checkBox_2L->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3H] = ui->checkBox_3H->checkState() ? 1:0;
+    senddata[TEST_MOSFETS_3L] = ui->checkBox_3L->checkState() ? 1:0;
     ser->Snd_Input(senddata);
 }

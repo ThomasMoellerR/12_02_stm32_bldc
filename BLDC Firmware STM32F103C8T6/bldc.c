@@ -987,18 +987,93 @@ void BLDC_Set_Mode(TUINT8 u8Mode)
 
 	}
 
+	if (u8Mode == BLDC_MODE_MOSFET_TEST)
+	{
+
+	}
 }
 
 /******************************************************************************
-   Description    : Motor mit Hall oder Sensorlos
+   Description    : Mosfets einzeln durchschalten
+                    [0][1][2][3][4][5][6]
+                    [0] = not used
+                    [1] = 1H
+                    [2] = 1L
+                    [3] = 2H
+                    [4] = 2L
+                    [5] = 3H
+                    [6] = 3L
    Parameter      :
    Return-Value   :
 ******************************************************************************/
 
-TUINT8 BLDC_Get_Motortyp(void)
+void BLDC_Test_Mosfets(TUINT8 *pu8Mosfets)
 {
-	return bldc_u8MotorType;
+	#define CH_1H_PIN	GPIO_Pin_8
+	#define CH_1H_PORT	GPIOA
+
+	#define CH_1L_PIN	GPIO_Pin_13
+	#define CH_1L_PORT	GPIOB
+
+	#define CH_2H_PIN	GPIO_Pin_9
+	#define CH_2H_PORT	GPIOA
+
+	#define CH_2L_PIN	GPIO_Pin_14
+	#define CH_2L_PORT	GPIOB
+
+	#define CH_3H_PIN	GPIO_Pin_10
+	#define CH_3H_PORT	GPIOA
+
+	#define CH_3L_PIN	GPIO_Pin_15
+	#define CH_3L_PORT	GPIOB
+
+
+	static TUINT8 ActiveOnce = 1;
+
+	if (ActiveOnce)
+	{
+		ActiveOnce = 0;
+
+
+		GPIO_InitTypeDef GPIO_InitStruct;
+
+	    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10;
+	    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+	    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+	    GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+	    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+	    GPIO_Init(GPIOB, &GPIO_InitStruct);
+	}
+
+	// 1H
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_1H]) GPIO_WriteBit(CH_1H_PORT, CH_1H_PIN, ENABLE);
+	else GPIO_WriteBit(CH_1H_PORT, CH_1H_PIN, DISABLE);
+
+	// 1L
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_1L]) GPIO_WriteBit(CH_1L_PORT, CH_1L_PIN, ENABLE);
+	else GPIO_WriteBit(CH_1L_PORT, CH_1L_PIN, DISABLE);
+
+	// 2H
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_2H]) GPIO_WriteBit(CH_2H_PORT, CH_2H_PIN, ENABLE);
+	else GPIO_WriteBit(CH_2H_PORT, CH_2H_PIN, DISABLE);
+
+	// 2L
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_2L]) GPIO_WriteBit(CH_2L_PORT, CH_2L_PIN, ENABLE);
+	else GPIO_WriteBit(CH_2L_PORT, CH_2L_PIN, DISABLE);
+
+	// 3H
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_3H]) GPIO_WriteBit(CH_3H_PORT, CH_3H_PIN, ENABLE);
+	else GPIO_WriteBit(CH_3H_PORT, CH_3H_PIN, DISABLE);
+
+	// 3L
+	if (pu8Mosfets[BLDC_TEST_MOSFETS_3L]) GPIO_WriteBit(CH_3L_PORT, CH_3L_PIN, ENABLE);
+	else GPIO_WriteBit(CH_3L_PORT, CH_3L_PIN, DISABLE);
+
 }
+
 
 
 /******************************************************************************
