@@ -1,74 +1,74 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC\BLDC Firmware STM32F103C8T6 -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC\BLDC Firmware STM32F103C8T6\cmsis -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC\BLDC Firmware STM32F103C8T6\cmsis_boot -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC\BLDC Firmware STM32F103C8T6\stm_lib -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC\BLDC Firmware STM32F103C8T6\stm_lib\inc -I..\..\..\..\..\Users\computer\Desktop\Git_BLDC\BLDC">
-      <target file="hwe.o" lastModified="16a3f12e44c">
-         <source file="..\..\..\hwe.c" lastModified="16a3e97fe9f"/>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103RB -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\computer\Desktop\BLDC\BLDC Firmware STM32F103C8T6\cmsis -I..\..\..\..\..\Users\computer\Desktop\BLDC\BLDC Firmware STM32F103C8T6\cmsis_boot -I..\..\..\..\..\Users\computer\Desktop\BLDC\BLDC Firmware STM32F103C8T6 -I..\..\..\..\..\Users\computer\Desktop\BLDC\BLDC Firmware STM32F103C8T6\stm_lib\inc -I..\..\..\..\..\Users\computer\Desktop\BLDC -I..\..\..\..\..\Users\computer\Desktop\BLDC\BLDC Firmware STM32F103C8T6\stm_lib -I..\..\..\..\..\Users\computer\Desktop">
+      <target file="hwe.o" lastModified="16a5aab553b">
+         <source file="..\..\..\hwe.c" lastModified="16a43e1109c"/>
       </target>
-      <target file="stm32f10x_iwdg.o" lastModified="16a3edb68f6">
-         <source file="..\..\..\stm_lib\src\stm32f10x_iwdg.c" lastModified="16a3e97feb4"/>
+      <target file="stm32f10x_iwdg.o" lastModified="16a5aab5a6e">
+         <source file="..\..\..\stm_lib\src\stm32f10x_iwdg.c" lastModified="16a43e110b1"/>
       </target>
-      <target file="stm32f10x_rcc.o" lastModified="16a3edb6501">
-         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="16a3e97feb4"/>
+      <target file="stm32f10x_rcc.o" lastModified="16a5aab56b7">
+         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="16a43e110b1"/>
       </target>
-      <target file="tim2.o" lastModified="16a3f12e5a1">
-         <source file="..\..\..\tim2.c" lastModified="16a3e97feb6"/>
+      <target file="tim2.o" lastModified="16a5aab57e2">
+         <source file="..\..\..\tim2.c" lastModified="16a43e110b3"/>
       </target>
-      <target file="misc.o" lastModified="16a3edb6833">
-         <source file="..\..\..\stm_lib\src\misc.c" lastModified="16a3e97feb2"/>
+      <target file="misc.o" lastModified="16a5aab59c0">
+         <source file="..\..\..\stm_lib\src\misc.c" lastModified="16a43e110af"/>
       </target>
-      <target file="ctl.o" lastModified="16a3f33b098">
-         <source file="..\..\..\ctl.c" lastModified="16a3f33abaa"/>
+      <target file="ctl.o" lastModified="16a5de1e834">
+         <source file="..\..\..\ctl.c" lastModified="16a5de1e2b9"/>
       </target>
-      <target file="usart3.o" lastModified="16a3f12e753">
-         <source file="..\..\..\usart3.c" lastModified="16a3e97feb8"/>
+      <target file="usart3.o" lastModified="16a5aab5991">
+         <source file="..\..\..\usart3.c" lastModified="16a43e110b6"/>
       </target>
-      <target file="startup_stm32f10x_md.o" lastModified="16a3edb63b3">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="16a3e97fe9b"/>
+      <target file="startup_stm32f10x_md.o" lastModified="16a5aab558e">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="16a43e11098"/>
       </target>
-      <target file="bldc.o" lastModified="16a3f3c6b93">
-         <source file="..\..\..\bldc.c" lastModified="16a3f3c1af6"/>
+      <target file="bldc.o" lastModified="16a5aab5957">
+         <source file="..\..\..\bldc.c" lastModified="16a43e11096"/>
       </target>
-      <target file="ext.o" lastModified="16a3f12e515">
-         <source file="..\..\..\ext.c" lastModified="16a3e97fe9f"/>
+      <target file="ext.o" lastModified="16a5aab5679">
+         <source file="..\..\..\ext.c" lastModified="16a43e1109c"/>
       </target>
-      <target file="tim1.o" lastModified="16a3f12e55c">
-         <source file="..\..\..\tim1.c" lastModified="16a3e97feb5"/>
+      <target file="tim1.o" lastModified="16a5aab57a9">
+         <source file="..\..\..\tim1.c" lastModified="16a43e110b3"/>
       </target>
-      <target file="stm32f10x_gpio.o" lastModified="16a3edb6403">
-         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="16a3e97feb3"/>
+      <target file="stm32f10x_gpio.o" lastModified="16a5aab55c7">
+         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="16a43e110b1"/>
       </target>
-      <target file="stm32f10x_exti.o" lastModified="16a3edb6534">
-         <source file="..\..\..\stm_lib\src\stm32f10x_exti.c" lastModified="16a3e97feb3"/>
+      <target file="stm32f10x_exti.o" lastModified="16a5aab56ea">
+         <source file="..\..\..\stm_lib\src\stm32f10x_exti.c" lastModified="16a43e110b0"/>
       </target>
-      <target file="system_stm32f10x.o" lastModified="16a3edb6390">
-         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="16a3e97fe9e"/>
+      <target file="system_stm32f10x.o" lastModified="16a5aab556c">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="16a43e1109a"/>
       </target>
-      <target file="syscalls.o" lastModified="16a3edb669b">
-         <source file="..\..\..\syscalls\syscalls.c" lastModified="16a3e97feb5"/>
+      <target file="syscalls.o" lastModified="16a5aab5846">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="16a43e110b3"/>
       </target>
-      <target file="tsc.o" lastModified="16a3f12e79a">
-         <source file="..\..\..\tsc.c" lastModified="16a3e97feb7"/>
+      <target file="tsc.o" lastModified="16a5aab59fc">
+         <source file="..\..\..\tsc.c" lastModified="16a43e110b5"/>
       </target>
-      <target file="tim3.o" lastModified="16a3f12e5e2">
-         <source file="..\..\..\tim3.c" lastModified="16a3e97feb6"/>
+      <target file="tim3.o" lastModified="16a5aab581a">
+         <source file="..\..\..\tim3.c" lastModified="16a43e110b4"/>
       </target>
-      <target file="stm32f10x_tim.o" lastModified="16a3edb6322">
-         <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="16a3e97feb4"/>
+      <target file="stm32f10x_tim.o" lastModified="16a5aab5503">
+         <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="16a43e110b2"/>
       </target>
-      <target file="stm32f10x_adc.o" lastModified="16a3edb657b">
-         <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="16a3e97feb2"/>
+      <target file="stm32f10x_adc.o" lastModified="16a5aab5730">
+         <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="16a43e110b0"/>
       </target>
-      <target file="stm32f10x_dma.o" lastModified="16a3edb66d1">
-         <source file="..\..\..\stm_lib\src\stm32f10x_dma.c" lastModified="16a3e97feb2"/>
+      <target file="stm32f10x_dma.o" lastModified="16a5aab587b">
+         <source file="..\..\..\stm_lib\src\stm32f10x_dma.c" lastModified="16a43e110b0"/>
       </target>
-      <target file="ser3.o" lastModified="16a3f12e7e3">
-         <source file="..\..\..\ser3.c" lastModified="16a3e97feae"/>
+      <target file="ser3.o" lastModified="16a5aab5a3e">
+         <source file="..\..\..\ser3.c" lastModified="16a43e110ab"/>
       </target>
-      <target file="stm32f10x_usart.o" lastModified="16a3edb65bc">
-         <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="16a3e97feb5"/>
+      <target file="stm32f10x_usart.o" lastModified="16a5aab576f">
+         <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="16a43e110b2"/>
       </target>
-      <target file="main.o" lastModified="16a3f3b112f">
-         <source file="..\..\..\main.c" lastModified="16a3f3aee4c"/>
+      <target file="main.o" lastModified="16a5aab5640">
+         <source file="..\..\..\main.c" lastModified="16a43e1109d"/>
       </target>
    </processor>
 </history>

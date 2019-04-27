@@ -100,6 +100,13 @@ void CTL_Main (void)
 
 
 
+  if (ctl_State == INIT)
+  {
+	  ctl_State = WAIT_FOR_APPLICATION_MODE;
+  }
+
+
+
   if (!SER3_u8Valid_Data())
   {
     SER3_Protocol_Handling(100);
@@ -131,35 +138,32 @@ void CTL_Main (void)
 
 	switch (ctl_State)
 	{
-		case INIT:
-
-			ctl_State = WAIT_FOR_APPLICATION_MODE;
-			break;
 
 
-			case WAIT_FOR_APPLICATION_MODE:
 
-				switch(SER3_au8RecBuf[CMD])
-				{
-					case CMD_TEST_MOSFETS:		BLDC_Set_Mode(BLDC_MODE_MOSFET_TEST);
-												ctl_State = MOSFET_TEST;
-												break;
+	case WAIT_FOR_APPLICATION_MODE:
 
-					case CMD_HALL :				BLDC_Set_Mode(BLDC_MODE_HALL);
-												ctl_State = WAIT_FOR_HALL_INFORMATION;
-												break;
+		switch(SER3_au8RecBuf[CMD])
+		{
+			case CMD_TEST_MOSFETS:		BLDC_Set_Mode(BLDC_MODE_MOSFET_TEST);
+										ctl_State = MOSFET_TEST;
+										break;
 
-					case CMD_SENSORLESS:		BLDC_Set_Mode(BLDC_MODE_SENSORLESS);
-												ctl_State = WAIT_FOR_OPERATION_MODE;
-												break;
+			case CMD_HALL :				BLDC_Set_Mode(BLDC_MODE_HALL);
+										ctl_State = WAIT_FOR_HALL_INFORMATION;
+										break;
 
-					case CMD_MANUAL_COMMUTATION:ctl_State = MANUAL_COMMUTATION;
-												break;
+			case CMD_SENSORLESS:		BLDC_Set_Mode(BLDC_MODE_SENSORLESS);
+										ctl_State = WAIT_FOR_OPERATION_MODE;
+										break;
 
-					default: break;
-				}
+			case CMD_MANUAL_COMMUTATION:ctl_State = MANUAL_COMMUTATION;
+										break;
 
-				break;
+			default: break;
+		}
+
+		break;
 
 
 
